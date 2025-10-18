@@ -1,26 +1,29 @@
-Affirmations App - Starter Code
-================================
+Woof App
+==================================
 
-Starter code for the Android Basics with Compose: Affirmations app.
-
+The Woof app is a list of dog photos with information about them including their name, age, and favorite activity. This app also uses Material Design to create a beautiful app experience for the user.
 
 Introduction
 ------------
-The Affirmations app contains a scrollable list of 10 cards.
 
+This is the starter code for the Woof app project. This project is an opportunity for you to learn Material3 and reinforce the concepts you've learned so far in Android Basics with Compose.
 
 Pre-requisites
 --------------
-* Familiarity with Lists in Kotlin
-* Experience building layouts with Jetpack Compose
-* Experience running apps on a device or emulator
 
+- Rows/Columns
+- Modifiers
+- Scaffold
+- Adding images
+- Button click handlers
+- Functions
+- Classes
+- Lists
+- App architecture
 
 Getting Started
 ---------------
-1. Install Android Studio, if you don't already have it.
-2. Download the sample.
-3. Import the sample into Android Studio.
-4. Build and run the sample.
 
-All photos by Romain Guy. All photos are licensed under CC0 https://creativecommons.org/share-your-work/public-domain/cc0/
+1. Download the project
+2. Open the project in Android Studio
+3. Run the project
