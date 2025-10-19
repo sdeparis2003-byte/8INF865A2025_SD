@@ -19,6 +19,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.cupcake.data.DataSource
+import com.example.cupcake.ui.SelectQuantityButton
 import com.example.cupcake.ui.theme.CupcakeTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,5 +38,33 @@ class MainActivity : ComponentActivity() {
                 CupcakeApp()
             }
         }
+    }
+}
+
+@Composable fun StartOrderScreen(
+    quantityOptions: List<Pair<Int, Int>>,
+    onNextButtonClicked: (Int) -> Unit,
+    modifier: Modifier = Modifier
+)
+{
+    quantityOptions.forEach { item ->
+        SelectQuantityButton(
+            labelResourceId = item.first,
+            onClick = { onNextButtonClicked(item.second) }
+        )
+    }
+}
+
+@Preview
+@Composable
+fun StartOrderPreview() {
+    CupcakeTheme {
+        StartOrderScreen(
+            quantityOptions = DataSource.quantityOptions,
+            onNextButtonClicked = {},
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(dimensionResource(R.dimen.padding_medium))
+        )
     }
 }
