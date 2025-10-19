@@ -41,19 +41,36 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable fun StartOrderScreen(
+@Composable
+fun StartOrderScreen(
     quantityOptions: List<Pair<Int, Int>>,
     onNextButtonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier
-)
-{
-    quantityOptions.forEach { item ->
-        SelectQuantityButton(
-            labelResourceId = item.first,
-            onClick = { onNextButtonClicked(item.second) }
+) {
+    androidx.compose.foundation.layout.Column(
+        modifier = modifier,
+        horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally
+    ) {
+        androidx.compose.foundation.Image(
+            painter = androidx.compose.ui.res.painterResource(R.drawable.cupcake),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxSize(fraction = 0.5f)
+                .padding(bottom = dimensionResource(R.dimen.padding_medium))
         )
+
+        quantityOptions.forEach { item ->
+            SelectQuantityButton(
+                labelResourceId = item.first,
+                onClick = { onNextButtonClicked(item.second) }
+            )
+        }
     }
 }
+
+
+
+
 
 @Preview
 @Composable
